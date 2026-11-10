@@ -36,17 +36,53 @@ silently, promising dates you cannot keep.
 - Right: "<the line to post instead>"
 -->
 
+#### Rule: check before I claim
+
+I claim only after reading the thread and the Development box: no assignee, no open linked PR, and no claim comment in the last 30 days that a maintainer answered. The claim says what I checked.
+
+- Wrong: "I'd like to work on this!"
+- Right: "I'd like to take this. I checked and there's no assignee or open PR linked. I'll start by reproducing it on v3.2.4."
+
+#### Rule: a first step and a window, not a deadline
+
+A claim names one concrete first step and a rough window I can keep, and says I'll post here if I drop it. No dated promises, and no promise of a PR before the maintainer has seen my approach.
+
+- Wrong: "I'll have a PR up by Friday."
+- Right: "I'm planning to look at `targets.py` this week. If I can't get to it, I'll say so here so someone else can take it."
+
 ### Questions I ask
 
 <!-- 1-2 rules. What a question of yours must carry before it goes
 up: answerable from the maintainer's chair, what you already tried,
 one question rather than five. -->
 
+#### Rule: one question, with what I tried
+
+Each question is a single question a maintainer can answer from the chair they're in. It states what I already read or ran, and my best guess at the answer.
+
+- Wrong: "How does this work? Where should the fix go? Do you want tests? Which branch?"
+- Right: "I ran `npm test` and it passes on `main`. I think the fix belongs in `ResolveByTaskType`, not `GetServiceTasks`. Is that the right place?"
+
+#### Rule: ask before building on a guess
+
+If the issue leaves the approach open, I ask which direction the maintainers prefer before writing code, and I name both options.
+
+- Wrong: "I went ahead and made it fail at startup. PR coming."
+- Right: "The issue allows either a consistent outcome or a startup error. I lean toward the startup error. Is that acceptable before I start?"
+
+
 ### Pings I send
 
 <!-- 1 rule is enough. When you nudge and how it sounds: measured
 against the repo's own reply rhythm, never your clock, and never
 pressure dressed as politeness. -->
+
+#### Rule: ping on the repo's rhythm
+
+I nudge only after the repo's usual reply time has passed (I check recent threads for it), at most once, and I add something new instead of "any update?".
+
+- Wrong: "Hi, any update on this? It's been 3 days."
+- Right: "Following up: I've pushed a repro commit at <link>. Maintainers here usually reply within about a week, so no rush. I wanted the evidence in the thread."
 
 <!--
 NO UNIT 2 GUIDE? The frame carries you. Write ALL the sections fresh
