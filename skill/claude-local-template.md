@@ -64,16 +64,24 @@ story's Toolkit entry.
 <!-- ^ Keep this line only if the repo ships a root AGENTS.md
 (step 0). Delete it otherwise. -->
 
-# My notes on [repo] (local, never committed)
+# My notes on docs.churchcrm.io (local, never committed)
 
 <!-- One provenance line: repo, the issue you claimed, the date you
 wrote this. -->
+- Provenance line: "Docs repo for ChurchCRM/CRM#10908 (claimed 2026-11-10)."
+
 
 ## Conventions from CONTRIBUTING.md
 
 <!-- Only the rules that will actually steer your work: what a PR needs
 before it's accepted, scope rules, branch and commit conventions, the process asks you
 could get wrong. Quote thresholds exactly; paraphrase the rest. -->
+- Conventions:
+  - Open the PR against main with the Current milestone and no label, since the feature shipped in 7.8.3.
+  - Never commit images or video. CI's scripts/check-visuals.mjs fails on them. Link screenshots from https://cdn.churchcrm.io and draw diagrams as SVG.
+  - Write for a church administrator, in plain words (member, family, event). Don't write "New in 7.8.3".
+  - Check claims against the published release, not master.
+  - Don't hand-edit docs/api/, since it's generated from the release's OpenAPI specs.
 
 ## The subsystem my issue touches
 
@@ -82,13 +90,18 @@ where the behavior lives, the 2-4 files that matter, how they
 connect, where the tests for them live. Conclusions only; the
 transcript dies here. -->
 
+- Subsystem: Run the template's scoped orientation prompt over only the docs pages for events and the Ministry Calendar, for example claude "Read only docs/user-guide/ and docs/api/. Tell me where the recurring events pages live, the 2-4 files that matter, and how the API pages are generated." Then write only the conclusions, with the actual file names. I haven't looked at the docs repo's page layout, so that part is yours to fill.
+
 ## Build and test commands
 
 <!-- The exact commands, copied working, not from memory. If the
 repo's CLAUDE.md or AGENTS.md already states them, point there
 instead of duplicating. -->
+- Build and test commands: npm install then npm run start for a live preview at http://localhost:3000, from the docs repo README. Copy any other commands you actually ran.
 
 ## House style and stated AI policy
+
+- AI policy: The docs guide says "Humans and agents follow the same rules", and AGENTS.md points to a CRM "AI operating model" I haven't read. Read it first. The template wants the AI policy quoted verbatim, so quote it once you have. Don't copy the "human-written PR descriptions" rule you may remember, because that came from the graphql-hive guide I read, not ChurchCRM.
 
 <!-- The repo's stated style rules that apply to your change, and
 its AI policy verbatim if it has one: course work is AI-assisted by
